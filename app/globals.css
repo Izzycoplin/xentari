@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* optional: your custom styles */
+body {
+  background-color: black;
+  color: white;
+}
+
+
+
+
+
+
