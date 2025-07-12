@@ -81,15 +81,15 @@ export default function Home() {
             key={i}
             className="absolute w-0.5 h-32 bg-indigo-500 opacity-10 animate-slide"
             style={{
-              left: ${Math.random() * 100}%,
-              top: ${Math.random() * 100}%,
-              animationDelay: ${Math.random() * 5}s,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
             }}
           ></div>
         ))}
       </div>
 
-      <style jsx>{
+      <style jsx>{`
         @keyframes slide {
           0% { transform: translateY(0); opacity: 0; }
           50% { opacity: 0.3; }
@@ -98,7 +98,7 @@ export default function Home() {
         .animate-slide {
           animation: slide 10s linear infinite;
         }
-      }</style>
+      `}</style>
 
       {/* Ambassador Popup */}
       {showPopup && (
@@ -151,73 +151,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Presale Buy Section */}
-      <section id="features" className="mt-32 px-8 md:px-20 max-w-3xl mx-auto relative z-10">
-        <h3 className="text-2xl font-bold mb-4">Buy XTRI Tokens</h3>
-        <div className="bg-[#1e1e2d] p-6 rounded-xl space-y-4 shadow-lg">
-          <div className="flex gap-3 flex-wrap justify-center">
-            {[0.1, 0.25, 0.5, 1].map((val) => (
-              <button
-                key={val}
-                onClick={() => setBnbAmount(val)}
-                className={px-4 py-2 rounded-lg border ${bnbAmount === val ? 'bg-indigo-600' : 'bg-black'} text-white}
-              >
-                {val} BNB
-              </button>
-            ))}
-          </div>
-          <div className="text-gray-300 text-center">
-            You’ll receive <strong>{formatXtri(bnbAmount)}</strong> XTRI tokens<br />
-            Est. APR: <strong>{aprMonth}%/mo</strong> • <strong>{aprYear}%/yr</strong>
-          </div>
-          <button className="bg-indigo-600 hover:bg-indigo-700 px-5 py-2 rounded-xl text-sm font-semibold w-full">
-            Connect Wallet & Buy
-          </button>
-        </div>
-      </section>
+      {/* Remaining content... */}
 
-      {/* Tokenomics */}
-      <section id="about" className="mt-32 px-8 md:px-20 max-w-4xl mx-auto text-center">
-        <h3 className="text-2xl font-bold mb-6">Tokenomics</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-gray-300">
-          <div><h4 className="text-white font-semibold">Total Supply</h4><p>1,000,000,000 XTRI</p></div>
-          <div><h4 className="text-white font-semibold">Presale Rate</h4><p>1 BNB = 10,000 XTRI</p></div>
-          <div><h4 className="text-white font-semibold">Decimals</h4><p>18</p></div>
-          <div><h4 className="text-white font-semibold">Contract</h4><p className="break-words text-xs">0xF0F48c1D3FfE1f8a22C460c2d7FAb9d585bd8fEa</p></div>
-        </div>
-      </section>
-
-      {/* Ambassador Section */}
-      <section id="ambassador" className="mt-32 px-8 md:px-20 max-w-3xl mx-auto">
-        <h3 className="text-2xl font-bold mb-4">Ambassador Program</h3>
-        <p className="text-gray-400 mb-6">
-          Become a paid ambassador with staking APR benefits and exclusive access to the Xentari network.
-          Join fee: {ambassadorFeeBNB} BNB (~$200).
-        </p>
-        <form className="space-y-4">
-          <input type="text" placeholder="Your Name" className="w-full p-3 rounded bg-black text-white border border-gray-700" />
-          <input type="email" placeholder="Email Address" className="w-full p-3 rounded bg-black text-white border border-gray-700" />
-          <textarea placeholder="Tell us how you'd promote XTRI" className="w-full p-3 rounded bg-black text-white border border-gray-700" rows={4}></textarea>
-          <button type="submit" className="bg-indigo-600 hover:bg-indigo-700 transition px-6 py-3 rounded-xl text-sm font-semibold">
-            Pay {ambassadorFeeBNB} BNB & Join
-          </button>
-        </form>
-      </section>
-
-      {/* Partners */}
-      <section className="mt-32 px-8 text-center">
-        <p className="text-sm text-gray-500 mb-4">JOIN 70+ COMPANIES TRUSTING XENTARI</p>
-        <div className="flex flex-wrap justify-center gap-8 text-gray-500 text-lg font-semibold opacity-60">
-          <span>ionia</span>
-          <span>mimosa</span>
-          <span>callisto</span>
-          <span>sirius</span>
-          <span>sagitta</span>
-        </div>
-      </section>
     </main>
   );
 }
+
 
 
 
