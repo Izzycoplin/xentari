@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* optional: your custom styles */
-body {
-  background-color: black;
+/* Custom scroll & background tweaks */
+html, body {
+  background-color: #0f0f1c;
   color: white;
+  font-family: 'Inter', sans-serif;
 }
 
 

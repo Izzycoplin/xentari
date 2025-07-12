@@ -1,16 +1,14 @@
 import './globals.css';
 
-import { ReactNode } from 'react';
-
 export const metadata = {
-  title: 'Xentari Network',
-  description: 'Presale for XTRI Token',
+  title: 'Xentari',
+  description: 'AI-Powered Crypto Ecosystem',
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-black text-white font-sans">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
